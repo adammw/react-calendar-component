@@ -1,0 +1,58 @@
+.cal-week-day {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 0 solid #ebeff3;
+  border-left-width: 1px;
+  position: relative;
+
+  &:last-child {
+    border-right-width: 1px;
+  }
+
+  .now-marker {
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #fa565a;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      margin-left: -4px;
+      margin-top: -3px;
+      background-color: #fa565a;
+    }
+  }
+}
+
+.cal-week-day-background {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &--today {
+    background-color: #f2f8fe;
+  }
+
+  .time-slot {
+    border: 0 solid #ddd;
+    border-bottom-width: 1px;
+    flex: 1;
+
+    &:nth-child(2n+1) {
+      border-bottom-style: dotted;
+    }
+
+    &:last-child {
+      border-color: transparent;
+    }
+  }
+}

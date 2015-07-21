@@ -1,0 +1,21 @@
+@import 'variables';
+
+.cal-week-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $sidebarWidth;
+
+  .time {
+    flex: 1;
+    text-align: right;
+    padding-right: 12px;
+    font-size: 12px;
+    margin-top: -8px;
+    color: #999;
+
+    &:first-child {
+      color: transparent;
+      visibility: hidden;
+    }
+  }
+}

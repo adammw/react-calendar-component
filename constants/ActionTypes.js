@@ -1,0 +1,2 @@
+export const INCREMENT_WEEK = 'INCREMENT_WEEK';
+export const DECREMENT_WEEK = 'DECREMENT_WEEK';

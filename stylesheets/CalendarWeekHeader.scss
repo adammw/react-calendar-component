@@ -1,0 +1,70 @@
+@import 'variables';
+
+.cal-week-header {
+  display: flex;
+  flex-direction: row;
+  min-height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.cal-week-header-button {
+  $buttonWidth: $scrollbarWidth * 3;
+  width: $buttonWidth;
+  position: absolute;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--prev {
+    left: $sidebarWidth - $buttonWidth;
+    &::before{
+      content: '\2329';
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 100%;
+      color: black;
+      margin-left: -100%;
+    }
+  }
+
+  &--next {
+    right: 0;
+    &::before {
+      content: '\232a';
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 100%;
+      color: black;
+    }
+  }
+}
+
+.cal-week-header-dates {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding-left: $sidebarWidth;
+  padding-right: $scrollbarWidth * 3;
+}
+
+.cal-week-header-label {
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 4px;
+
+  &--weekend {
+    color: #999;
+  }
+
+  &--today {
+    color: #2789e4;
+    font-weight: bold;
+  }
+}

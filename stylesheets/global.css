@@ -1,0 +1,12 @@
+body {
+  font: 13px/1.4 'Helvetica neue',Helvetica,Arial,sans-serif;
+  color: #333;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
