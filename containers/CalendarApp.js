@@ -6,13 +6,14 @@ import '../stylesheets/global.css';
 import * as CalendarActions from '../actions/CalendarActions';
 
 @connect(state => ({
-  dates: state.dates
+  dates: state.dates,
+  events: state.events
 }))
 export default class CalendarApp extends Component {
   render() {
-    const { dates, dispatch } = this.props;
+    const { dates, events, dispatch } = this.props;
     return (
-      <Calendar dates={dates} {...bindActionCreators(CalendarActions, dispatch)} />
+      <Calendar dates={dates} events={events} {...bindActionCreators(CalendarActions, dispatch)} />
     );
   }
 }

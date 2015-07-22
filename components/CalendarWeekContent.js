@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CalendarWeekSidebar from './CalendarWeekSidebar';
-import CalendarWeekDay from './CalendarWeekDay';
+import CalendarSidebar from './CalendarSidebar';
+import CalendarDay from './CalendarDay';
 import '../stylesheets/CalendarWeekContent.scss';
 
 export default class CalendarWeekContent extends Component {
@@ -14,8 +14,12 @@ export default class CalendarWeekContent extends Component {
     }
 
     var dayComponents = days.map((day) => {
+      var dailyEvents = events.filter((event) => {
+        return (event.startDate.isBefore(day, 'day') || event.startDate.isSame(day, 'day')) &&
+          (event.endDate.isAfter(day, 'day') || event.endDate.isSame(day, 'day'));
+      });
       return (
-        <CalendarWeekDay key={day} date={day} />
+        <CalendarDay key={day} date={day} events={dailyEvents} />
       );
     });
 
@@ -23,7 +27,7 @@ export default class CalendarWeekContent extends Component {
 
     return (
       <div className="cal-week-content">
-        <CalendarWeekSidebar height={height}/>
+        <CalendarSidebar height={height}/>
         <ul className="cal-week-days" style={ { minHeight: height } }>
           {dayComponents}
         </ul>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import '../stylesheets/CalendarWeekSidebar.scss';
+import '../stylesheets/CalendarSidebar.scss';
 
-export default class CalendarWeekSidebar extends Component {
+export default class CalendarSidebar extends Component {
   render() {
     const { height } = this.props;
 
@@ -14,7 +14,7 @@ export default class CalendarWeekSidebar extends Component {
       );
     }
     return (
-      <ul className="cal-week-sidebar" style={ { minHeight: height } }>
+      <ul className="cal-sidebar" style={ { minHeight: height } }>
         {times}
       </ul>
     );
