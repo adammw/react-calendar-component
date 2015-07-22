@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CalendarEventBlock from './CalendarEventBlock';
 import classnames from 'classnames';
 import moment from 'moment';
+import * as CustomPropTypes from '../prop_types';
 import '../stylesheets/CalendarDay.scss';
 
 function percentageOfDay(date) {
@@ -22,6 +23,17 @@ function createNowMarker() {
 }
 
 export default class CalendarDay extends Component {
+  static propTypes = {
+    date: CustomPropTypes.moment,
+    events: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        startDate: CustomPropTypes.moment,
+        endDate: CustomPropTypes.moment
+      })
+    )
+  };
+
   render() {
     const { date, events } = this.props;
 

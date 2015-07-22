@@ -31,6 +31,12 @@ function defaultState() {
       startDate: moment().startOf('day').add(1, 'day').hour(19),
       endDate: moment().startOf('day').add(3, 'day').hour(1),
       name: 'Event Test 5'
+    },
+    {
+      id: 6,
+      startDate: moment().startOf('day').add(1, 'day').hour(9).minutes(45),
+      endDate: moment().startOf('day').add(1, 'day').hour(11).minutes(45),
+      name: 'Event Test 6'
     }
   ];
 }

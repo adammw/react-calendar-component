@@ -1,9 +1,26 @@
 .cal-event-block {
   position: absolute;
-  padding: 8px;
+  padding: 6px 2px 0 6px;
   background: rgba(200, 100, 100, 0.7);
   border-left: 4px solid rgba(200,100,100,1);
   box-sizing: border-box;
   width: calc(100% - 10px);
   margin-left: 2px;
+  overflow: hidden;
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+
+    &--one-line {
+      white-space: nowrap;
+      margin-top: -2px;
+      line-height: 100%;
+    }
+  }
+
+  .time {
+    font-weight: 300;
+  }
 }
